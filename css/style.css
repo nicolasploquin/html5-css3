@@ -29,6 +29,9 @@ h2 {
 a {
 	color:  inherit;
 }
+nav a {
+    text-decoration: none;
+}
 
 a[href$=".pdf"]{
 	background-image: url("../img/pdf.svg");
@@ -44,9 +47,6 @@ a[href$=".docx"]{
 	padding-left: 1.75em;
 }
 
-nav a {
-	text-decoration: none;
-}
 
 table, th, td {
 /*	border: 1px solid #444444; */
@@ -82,7 +82,7 @@ body {
 	padding-bottom: 60px;
 	max-width:1000px;
 	background-color: rgba(255,255,255,.7);
-	background-color: #FFFF0080;
+	background-color: #FFFFFFAA;
 }
 
 #entete {
@@ -213,16 +213,17 @@ header nav a:hover {
 	color: #ffffff;
 	perspective: 1000px;
 	perspective-origin: 50vw 50vh;
+
+    font-size: 0.8em;
 }
 
 .menu a { 
-	transform-origin: left center;
 	display: block;
 	padding: .5em 1em;
 	background-color: #990000;
 	transition: background-color .4s;
 }
-.menu a:hover, .menu a:focus { 
+.menu a:hover, .menu a:focus {
 	transition: background-color 1s, transform 1s;
 	color: #990000;
 	background-color: #eeeeee;
@@ -482,4 +483,3 @@ body {
 	
 	
 }
-
