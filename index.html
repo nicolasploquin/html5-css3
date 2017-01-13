@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Formation HTML5 &amp; CSS3</title>
+<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet'>
+<link rel="stylesheet" href="css/style.1.css" />
+<script src="js/script.js" defer></script>
+</head>
+<body>
+<header id="entete" class="bandeau">
+	<h1>HTML5 &amp; CSS3</h1>
+	<h2>Nouveautés</h2>
+	<nav>
+		<!-- attention : display inline-block, ne pas espacer les éléments a -->
+		<a href="#">Accueil</a><a href="#">Contact</a><a href="#">Aides</a>
+	</nav>
+</header>
+<div id="colGauche">
+	<nav class="menu">
+		<a href="#fable">Cigale et Fourmi</a>
+		<a href="#illustration">Illustration</a>
+		<a href="#telechargement">Téléchargement</a>
+		<a href="#lien">Lien</a>
+		<a href="#media">Média</a>
+		<a href="#population">Population</a>		
+		<a href="#inscription">Inscription</a>		
+		<a href="#aAnimation">Cube</a>		
+	</nav>
+	<aside>
+		<h2>Dicton du Jour</h2>
+		<p>Le 
+		vent 
+		de 
+		novembre arrache la dernière.</p>
+	</aside>
+</div>
+
+<main>
+	<article id="fable">
+		<h2>La Cigale et la Fourmi</h2>
+		<blockquote class="fable animation">
+			La Cigale, ayant chanté tout l'été, se trouva fort dépourvue quand la bise fut venue: pas un seul petit morceau
+			de mouche ou de vermisseau. Elle alla crier famine chez la Fourmi sa voisine, la priant de lui prêter quelque grain pour subsister
+			jusqu'à la saison nouvelle. <q>Je vous paierai, lui dit-elle, avant l'Oût, foi d'animal, intérêt et principal.</q>
+			La Fourmi n'est pas prêteuse&nbsp;: C'est là son moindre défaut. Que faisiez-vous au temps chaud&nbsp;? Dit-elle à cette emprunteuse.
+			<br/>-&nbsp;Nuit et jour à tout venant, je chantais, ne vous déplaise.
+			<br/>-&nbsp;Vous chantiez&nbsp;? j'en suis fort aise. Et bien, dansez maintenant.
+		</blockquote>
+		<p>
+			<cite>Jean de La Fontaine, Fables de La Fontaine, 1668.</cite> <ins>2,50 &euro;</ins> (<strong>-50%</strong>, <del>5,00 €</del>)
+		</p>
+	</article>
+	<article id="illustration">
+		<h2>Illustration</h2>
+		<figure>
+			<img src="img/cigale-fourmi.jpg" width="600" alt="Illustration de la fable La Cigale et la Fourmi" />
+			<figcaption>Illustration de la fable La Cigale et la Fourmi</figcaption>
+		</figure>
+	</article>
+	<article id="telechargement">
+		<h2>Téléchargement</h2>
+		<ul>
+			<li><a href="doc/fable.pdf" download>Format PDF</a></li>
+			<li><a href="doc/fable.docx" download>Format Word</a></li>
+		</ul>
+	</article>
+	<article id="lien">
+		<h2>Lien</h2>
+		<a href="http://fr.wikipedia.org/wiki/La_Cigale_et_la_Fourmi" target="_blank" >Wikipedia</a>
+	</article>
+	<article id="media">
+		<h2>Vidéo</h2>
+		<video poster="http://eni-html5.appspot.com/media/golf.png" width="720" >
+			<source src="http://eni-html5.appspot.com/media/golf.mp4" />
+			<source src="http://eni-html5.appspot.com/media/golf.webm" />
+			<source src="http://eni-html5.appspot.com/media/golf.ogv" />
+			<track default src="media/golf.vtt" srclang="fr"/>
+		</video>
+		<div class="controls">
+			<button id="play"><i aria-hidden="true">&#xE768;<span class="sr-only">Play</span></i></button>
+			<button id="pause"><i aria-hidden="true">&#xE769;<span class="sr-only">Pause</span></i></button>
+			<button id="stop"><i aria-hidden="true">&#xE25E;<span class="sr-only">Stop</span></i></button>
+			<button id="x1">x1</button>
+			<button id="x2">x2</button>
+			<span id="temps"></span>
+		</div>
+		<h2>Audio</h2>
+		<audio controls loop >
+			<source src="http://eni-html5.appspot.com/media/tricky.mp3" />
+			<source src="http://eni-html5.appspot.com/media/tricky.ogg" />
+		</audio>
+	</article>
+	<article id="population">
+		<h2>Population</h2>
+
+        <!--
+		<table class="">
+			<thead>
+				<tr><th>Col 1</th><th>Col 2</th><th>Col 3</th></tr>
+			</thead>		
+			<tr><td >A</td><td>BB</td><td>CCC</td></tr>
+			<tr><td >DDDD</td><td>EEEEE</td><td>FFFFFF</td></tr>		
+			<tr><td>GGGGGGG</td><td>HHHHHHHHH</td><td>IIIIIIIII</td></tr>		
+		</table>
+		-->
+		
+		<table id="table-population" class="mon-tableau">
+			<caption>Population des plus grandes villes de France</caption>
+			<thead>
+				<tr>
+					<th></th>
+					<th>Ville</th>
+					<th>Région</th>
+					<th>1<sup>er</sup> janvier 2014</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>1</td>
+					<td>Paris</td>
+					<td>&Icirc;le de France</td>
+					<td>2&nbsp;220&nbsp;445</td>
+				</tr>
+				<tr><td>2</td><td>Marseille</td><td>Provence-Alpes-Côte d'Azur</td><td>858&nbsp;120</td></tr>
+				<tr><td>3</td><td>Lyon</td><td>Auvergne-Rhône-Alpes</td><td>506&nbsp;615</td></tr>
+				<tr><td>4</td><td>Toulouse</td><td>Occitanie</td><td>466&nbsp;297</td></tr>
+				<tr><td>5</td><td>Nice</td><td>Provence-Alpes-Côte d'Azur</td><td>347&nbsp;636</td></tr>
+				<tr><td>6</td><td>Nantes</td><td>Pays de la Loire</td><td>306&nbsp;495</td></tr>
+				<tr><td>7</td><td>Strasbourg</td><td>Grand Est</td><td>280&nbsp;680</td></tr>
+				<tr><td>8</td><td>Montpellier</td><td>Occitanie</td><td>279&nbsp;845</td></tr>
+				<tr><td>9</td><td>Bordeaux</td><td>Nouvelle Aquitaine</td><td>250&nbsp;776</td></tr>
+				<tr><td>10</td><td>Lille</td><td>Hauts-de-France</td><td>238&nbsp;381</td></tr>
+			</tbody>
+			<tfoot>
+				<tr><td colspan="4">mise à jour le 1<sup>er</sup> janvier 2017</td></tr>
+			</tfoot>
+		</table>
+	</article>
+	<article id="inscription">
+		<h2>Inscription</h2>
+		
+		<form method="post" action="inscription.php" class="mon-formulaire" enctype="multipart/form-data">
+		
+			<label for="nom">Nom *</label>
+			<input type="text" id="nom" name="nom" tabindex="5" />
+			<br/>
+			<label for="prenom">Prénom</label>
+			<input type="text" id="prenom" name="prenom" />
+			<br/>
+			<label for="adresse">Adresse</label>
+			<textarea id="adresse" name="adresse" rows="3"></textarea>
+			<br/>
+			<label for="cp">Code Postal</label>
+			<input type="number" id="cp" name="cp" min="1000" max="99999" step="100" />
+			<br/>
+			<label for="ville-select">Ville</label>
+			<select id="ville-select" name="ville-select">
+				<option value="">(vide)</option>
+				<option value="nan">Nantes</option>
+				<option value="ren">Rennes</option>
+				<option value="nio">Niort</option>
+				<option value="nic">Nice</option>
+				<option value="par">Paris</option>
+			</select>
+			<br/>
+			<label for="ville">Ville</label>
+			<input type="text" id="ville" name="ville" list="listeVilles" />
+			<datalist id="listeVilles">
+				<option value="Nantes"></option>
+				<option value="Rennes"></option>
+				<option value="Niort"></option>
+				<option value="Nice"></option>
+				<option value="Paris"></option>
+			</datalist>
+			<br/>
+			<label for="naiss">Date Naissance</label>
+			<input type="date" id="naiss" name="naiss" />
+			<br/>
+			<label for="tel">Téléphone</label>
+			<input type="tel" id="tel" name="tel" pattern="[0-9]{10}"
+				title="0000000000 ( 10 chiffres )" />
+			<br/>
+			<label for="email">E-mail</label>
+			<input type="email" id="email" name="email" />
+			<br/>
+			<label for="verifEmail">E-mail (vérifier)</label>
+			<input type="email" id="verifEmail" />
+			<br/>
+			<label for="news">Newsletter</label>
+			<input type="checkbox" id="news" name="news" value="news" checked />
+			<br/>
+			<fieldset>
+				<legend>Réglement</legend>
+				<input type="radio" id="regl-cheque" name="regl" value="cheque" />
+				<label for="regl-cheque">Chèque</label>
+				<input type="radio" id="regl-cb" name="regl" value="cb" checked />
+				<label for="regl-cb">CB</label>
+				<input type="radio" id="regl-especes" name="regl" value="especes" />
+				<label for="regl-especes">Espèces</label>
+			</fieldset>
+            <label for="docs">Document</label>
+            <input type="file" id="docs" name="docs" />
+            <br/>
+            <label for="scan">Scanner</label>
+            <input type="file" id="scan" name="scan" accept="image/*" capture="" />
+            <br/>
+			<button type="submit" >Envoyer</button>
+			<button type="reset" >Effacer</button>
+		</form>
+	</article>
+	<article id="aAnimation">
+		<h2>Animation</h2>
+		<p>Exemple d'animation CSS3</p>
+
+		<div id="cube3D">
+			<div id="face1">1</div>
+			<div id="face2"><a href="http://www.google.fr" target="_blank">Go</a></div>
+			<div id="face3">3</div>
+			<div id="face4"><img src="img/eni-bv-128.png" /></div>
+			<div id="face5">5</div>
+			<div id="face6">6</div>
+		</div>
+
+		<button id="animPlay">Play</button>
+		<button id="animPause">Pause</button>
+	</article>
+</main>
+<footer id="pied">
+	<address>7 bis Avenue Jacques Cartier, Saint Herblain</address>
+</footer>
+	
+</body>
+</html>

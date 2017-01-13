@@ -1,0 +1,9 @@
+main > article {
+    display: none;
+    min-height: 75vh;
+}
+
+main > article:target {
+     ackground-color: yellow;
+    display: block;
+}

@@ -1,0 +1,102 @@
+
+/* ---- Règles de base ---- */ 
+html {
+	color: #444444;
+	font-family: "Segoe UI", Arial, Verdana, sans-serif;
+	font-size: .9em;
+}
+h1 {
+	color: #990000;
+	font-size: 2.5em;
+	font-family: "Segoe UI Light", "Segoe UI", sans-serif;
+	font-weight: 100;
+	text-transform: uppercase;
+	margin: 0 0 .5em;
+}
+h2 {
+	font-family: "Segoe UI Light", "Segoe UI", sans-serif;
+	font-size: 2em;
+	font-weight: 100;
+	font-variant: small-caps;
+	margin: 0;
+}
+a {
+	color:  inherit;
+}
+
+table, th, td {
+/*	border: 1px solid #444444; */
+}
+
+img, video, audio, figure, form {
+	max-width: 100%;
+}
+
+
+/* ---- positionnement ----- */
+
+/* ----- entete  ----- */
+
+/* ----- fable (class="fable") ----- */
+
+.fable {
+	background-color: #990000;
+	color: white;
+	font-family: "Indie Flower", cursive;
+	font-size: 1.5em;
+	line-height: 1.6em;
+	letter-spacing: .1em;
+	font-style: italic;
+	padding: 1em;
+	border-radius: 1em;
+}
+.fable.animation {
+	height: 1em;
+	width: 5.5em;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	transition: height .4s, width .6s .3s;
+}
+.fable.animation:hover {
+	height: 18em;
+	width: 33em;
+	white-space: normal;
+	transition: height .4s .5s, width .6s;
+	text-align: justify;
+}
+
+
+/* ----- menu (class="menu") ----- */
+.menu {
+	background-color: #990000;
+	color: #ffffff;
+	 erspective: 1000px;
+	 erspective-origin: 50vw 50vh;
+	 width: 10em;
+}
+
+.menu a { 
+	text-decoration: none;
+	transform-origin: left center;
+	display: block;
+	padding: .5em 1em;
+	background-color: #990000;
+	 ransition: background-color .4s;
+}
+.menu a:hover, .menu a:focus { 
+	 ransition: background-color 1s, transform 1s;
+	color: #990000;
+	background-color: #eeeeee;
+}
+
+/* ----- tableau (class="mon-tableau") ----- */
+
+/* ----- formulaire (class="mon-formulaire") ----- */
+
+/* ----- Animation CSS3 Cube ----- */
+
+/* ----- pied (address) ----- */
+
+/* ----- Présentation Adaptative ------ */
+
