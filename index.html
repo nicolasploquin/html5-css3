@@ -39,7 +39,7 @@
 <main>
 	<article id="fable">
 		<h2>La Cigale et la Fourmi</h2>
-		<blockquote class="fable animation">
+		<blockquote class="fable -nimation">
 			La Cigale, ayant chanté tout l'été, se trouva fort dépourvue quand la bise fut venue: pas un seul petit morceau
 			de mouche ou de vermisseau. Elle alla crier famine chez la Fourmi sa voisine, la priant de lui prêter quelque grain pour subsister
 			jusqu'à la saison nouvelle. <q>Je vous paierai, lui dit-elle, avant l'Oût, foi d'animal, intérêt et principal.</q>
@@ -94,8 +94,8 @@
 	<article id="population">
 		<h2>Population</h2>
 
-        <!--
-		<table class="">
+        
+		<table class="mon-tableau">
 			<thead>
 				<tr><th>Col 1</th><th>Col 2</th><th>Col 3</th></tr>
 			</thead>		
@@ -103,7 +103,7 @@
 			<tr><td >DDDD</td><td>EEEEE</td><td>FFFFFF</td></tr>		
 			<tr><td>GGGGGGG</td><td>HHHHHHHHH</td><td>IIIIIIIII</td></tr>		
 		</table>
-		-->
+		
 		
 		<table id="table-population" class="mon-tableau">
 			<caption>Population des plus grandes villes de France</caption>
@@ -140,13 +140,15 @@
 	<article id="inscription">
 		<h2>Inscription</h2>
 		
-		<form method="post" action="inscription.php" class="mon-formulaire" enctype="multipart/form-data">
+		<form method="post" action="inscription.php" 
+			class="mon-formulaire-2" enctype="multipart/form-data"
+			>
 		
 			<label for="nom">Nom *</label>
-			<input type="text" id="nom" name="nom" />
+			<input type="text" id="nom" name="nom" placeholder="votre nom" required/>
 			<br/>
 			<label for="prenom">Prénom</label>
-			<input type="text" id="prenom" name="prenom" />
+			<input type="text" id="prenom" name="prenom" placeholder="votre prénom" />
 			<br/>
 			<label for="adresse">Adresse</label>
 			<textarea id="adresse" name="adresse" rows="3"></textarea>
@@ -177,8 +179,9 @@
 			<label for="naiss">Date Naissance</label>
 			<input type="date" id="naiss" name="naiss" />
 			<br/>
-			<label for="tel">Téléphone</label>
-			<input type="tel" id="tel" name="tel" pattern="[0-9]{10}"
+			<label for="tel">Téléphone *</label>
+			<input type="tel" id="tel" name="tel" 
+				pattern="(\+33|0)[1-9](\.[0-9][0-9]){4}"
 				title="0000000000 ( 10 chiffres )" />
 			<br/>
 			<label for="email">E-mail</label>
@@ -208,6 +211,65 @@
 			<button type="submit" >Envoyer</button>
 			<button type="reset" >Effacer</button>
 		</form>
+		<form method="post" action="inscription.php" 
+		class="mon-formulaire-flex" enctype="multipart/form-data"
+		>
+	
+		<label for="nom">Nom *</label>
+		<input type="text" id="nom" name="nom" placeholder="votre nom" required/>
+		<label for="prenom">Prénom</label>
+		<input type="text" id="prenom" name="prenom" placeholder="votre prénom" />
+		<label for="adresse">Adresse</label>
+		<textarea id="adresse" name="adresse" rows="3"></textarea>
+		<label for="cp">Code Postal</label>
+		<input type="number" id="cp" name="cp" min="1000" max="99999" step="100" />
+		<label for="ville-select">Ville</label>
+		<select id="ville-select" name="ville-select">
+			<option value="">(vide)</option>
+			<option value="nan">Nantes</option>
+			<option value="ren">Rennes</option>
+			<option value="nio">Niort</option>
+			<option value="nic">Nice</option>
+			<option value="par">Paris</option>
+		</select>
+		<label for="ville">Ville</label>
+		<input type="text" id="ville" name="ville" list="listeVilles" />
+		<datalist id="listeVilles">
+			<option value="Nantes"></option>
+			<option value="Rennes"></option>
+			<option value="Niort"></option>
+			<option value="Nice"></option>
+			<option value="Paris"></option>
+		</datalist>
+		<label for="naiss">Date Naissance</label>
+		<input type="date" id="naiss" name="naiss" />
+		<label for="tel">Téléphone *</label>
+		<input type="tel" id="tel" name="tel" 
+			pattern="(\+33|0)[1-9](\.[0-9][0-9]){4}"
+			title="0000000000 ( 10 chiffres )" />
+		<label for="email">E-mail</label>
+		<input type="email" id="email" name="email" />
+		<label for="verifEmail">E-mail (vérifier)</label>
+		<input type="email" id="verifEmail" />
+		<label for="news">Newsletter</label>
+		<input type="checkbox" id="news" name="news" value="news" checked />
+		<fieldset>
+			<legend>Réglement</legend>
+			<input type="radio" id="regl-cheque" name="regl" value="cheque" />
+			<label for="regl-cheque">Chèque</label>
+			<input type="radio" id="regl-cb" name="regl" value="cb" checked />
+			<label for="regl-cb">CB</label>
+			<input type="radio" id="regl-especes" name="regl" value="especes" />
+			<label for="regl-especes">Espèces</label>
+		</fieldset>
+		<label for="docs">Document</label>
+		<input type="file" id="docs" name="docs" />
+		<label for="scan">Scanner</label>
+		<input type="file" id="scan" name="scan" accept="image/*" capture="" />
+		<button type="submit" >Envoyer</button>
+		<button type="reset" >Effacer</button>
+	</form>
+
 	</article>
 	<article id="aAnimation">
 		<h2>Animation</h2>

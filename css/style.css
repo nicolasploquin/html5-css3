@@ -55,6 +55,13 @@ table, th, td {
 img, video, audio, figure, form {
 	max-width: 100%;
 }
+
+input, button, select, textarea {
+	font-size: .9em;
+	font-family: inherit;
+	box-sizing: border-box;
+}
+
 textarea {
 	resize: vertical;
 }
@@ -74,7 +81,7 @@ i[aria-hidden] { /* symboles icones */
 /* ---- positionnement ----- */
 /*
 #entete, #entete nav, #colGauche, #contenu, #pied, body {
-	border: 1px dashed navy;
+	outline: 1px dashed navy;
 }
 */
 body {
@@ -161,6 +168,7 @@ header nav {
 header nav a {
 	background-color: #eeeeee;
 	border-left: 1px solid #cccccc;
+	/* margin-left: -0.5ex; pour absorber l'espace */ 
 	display: inline-block;
 	padding: .2em 1em;
 }
@@ -171,8 +179,9 @@ header nav a:first-child {
 header nav a:last-child {
 	border-radius: 0 8px 0 0;
 }
-header nav a:hover {
+header nav a:hover, header nav a:focus {
 	background-color: #aaaaaa;
+	outline: none;
 }
 
 /* ----- fable (class="fable") ----- */
@@ -221,12 +230,12 @@ header nav a:hover {
 	display: block;
 	padding: .5em 1em;
 	background-color: #990000;
-	transition: background-color .4s;
+	transition: background-color .2s;
 }
 .menu a:hover, .menu a:focus {
-	transition: background-color 1s, transform 1s;
 	color: #990000;
 	background-color: #eeeeee;
+	outline: none;	
 }
 
 /* ----- Video ----- */
@@ -275,6 +284,7 @@ video + .controls button:active {
 	color: #ffffff;
 }
 .mon-tableau tbody {
+	cursor: pointer;
 	border-bottom: 1px solid #999999;
 }
 .mon-tableau tbody tr:nth-child(odd) {
@@ -283,11 +293,11 @@ video + .controls button:active {
 }
 .mon-tableau tbody tr:nth-child(even) {
 	background-color: #cccccc;
-
+	
 }
 .mon-tableau tbody tr:hover {
 	background-color: #666666;
-    color: white;
+	color: white;
 }
 .mon-tableau tbody td {
 	border: 1px #999999;
@@ -305,6 +315,87 @@ video + .controls button:active {
 	background-color: rgba(255,255,0,.3);
 }
 
+/* ----- formulaire flex (class="mon-formulaire-flex") ----- */
+
+.mon-formulaire-flex {
+	background-color: rgba(255,255,255,.5);
+	border: 1px solid #ffffff;
+	padding: 1em;
+	margin: auto;
+
+	width: calc(24rem + .5ex + 1px);
+	max-width: calc(100% - 2em - 2px);
+
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+
+}
+.mon-formulaire-flex label {
+	flex: 1 0 8rem;
+
+	margin-bottom: 0px;
+}
+
+.mon-formulaire-flex input,
+.mon-formulaire-flex select,
+.mon-formulaire-flex textarea {
+	flex: 1 1 16rem;
+	box-sizing: border-box;
+
+	margin-bottom: 8px;
+}
+
+	
+/* ----- formulaire 2 (class="mon-formulaire-2") ----- */
+
+.mon-formulaire-2 {
+	background-color: rgba(255,255,255,.5);
+	border: 1px solid #ffffff;
+	padding: 1em;
+	margin: auto;
+	width: 390px;
+	width: calc(24rem + .5ex + 1px); /* 1px pour les erreurs d'arrondi */
+	max-width: calc(100% - 2em - 2px);
+}
+.mon-formulaire-2 label {
+	display: inline-block;
+	width: 8rem;
+	margin: 4px 0;
+	vertical-align: top;
+}
+.mon-formulaire-2 input:not([type="checkbox"]),
+.mon-formulaire-2 select,
+.mon-formulaire-2 textarea {
+	display: inline-block;
+	width: 16rem;
+	box-sizing: border-box;
+	margin: 4px 0;	
+}
+
+.mon-formulaire-2 input[type="checkbox"]{
+	width: auto;
+	margin: 8px 0;
+}
+.mon-formulaire-2 fieldset {
+	text-align: center;
+}
+.mon-formulaire-2 fieldset label {
+	width: auto;
+	padding-right: 2em;
+	margin: 0;
+}
+.mon-formulaire-2 fieldset label:last-child {
+	padding: 0;
+}
+	
+.mon-formulaire-2 fieldset input[type="radio"] {
+	width: auto;
+}
+
+				
 
 /* ----- formulaire (class="mon-formulaire") ----- */
 
