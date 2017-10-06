@@ -52,8 +52,11 @@ table, th, td {
 /*	border: 1px solid #444444; */
 }
 
-img, video, audio, figure, form {
+img, video, audio, figure, form, .scroll-hor {
 	max-width: 100%;
+}
+.scroll-hor {
+	overflow: auto;
 }
 
 input, button, select, textarea {
@@ -66,7 +69,7 @@ textarea {
 	resize: vertical;
 }
 * {
-	transition: all .3s;
+	--transition: all .3s;
 }
 /* --- Accessibilité --- */
 .sr-only {
@@ -96,6 +99,9 @@ body {
 	position: relative;
 	height: 140px;
 }
+#entete.reduit {
+	height: 32px;
+}
 #entete nav {
 	position: absolute;
 	bottom: 0;
@@ -121,9 +127,11 @@ header {
 	background-color: #cccccc;
 	background-image: url("../img/eni-bv-64.png"), linear-gradient(to bottom, #dddddd, #bbbbbb);
 	background-repeat: no-repeat;
-	background-position: right 24px top 24px, 0 0;
+	background-position: right 24px bottom 68px, 0 0;
 	background-size: 48px, cover;
 	overflow: hidden;
+
+	transition: height .7s;
 }
 header h1 {
 	margin-left: 40px;
@@ -134,12 +142,6 @@ header h1.js {
 	color: #0033cc;
 	text-shadow: 0 0 8px #fff;
 }
-
-/*
-@media screen and (max-width:800px){
-	header h1 { font-size: 1em; }
-}
- */
 header.bandeau h1 {
 	margin: 40px 0 0 60px;	
 }
@@ -176,13 +178,50 @@ header nav a:first-child {
 	border-left: none;
 	border-top-left-radius: 8px;
 }
-header nav a:last-child {
+header nav a:last-of-type {
 	border-radius: 0 8px 0 0;
 }
 header nav a:hover, header nav a:focus {
 	background-color: #aaaaaa;
 	outline: none;
 }
+
+header nav button {
+	font-family: "Segoe MDL2 Assets", fantasy;
+	margin: 0;
+	padding: 0;
+	border: 0 none transparent;
+	background: none;
+	display: inline-block;
+	background-color: #fff9;
+	line-height: 20px;
+	width: 24px;
+	text-align: center;
+	border-radius: 50%;
+	border: 2px solid white;
+	box-sizing: border-box;
+	font-weight: 900;
+
+}
+header nav button {
+	transform: rotate(0deg);
+	transition: transform .3s .7s;
+}
+header.reduit nav button {
+	transform: rotate(-180deg);
+}
+header > :not(nav) {
+	opacity: 1;
+	transition: opacity .3s .4s;
+}
+header.reduit > :not(nav) {
+	opacity: 0;
+	transition: opacity .3s;
+}
+
+
+
+
 
 /* ----- fable (class="fable") ----- */
 
@@ -220,9 +259,6 @@ header nav a:hover, header nav a:focus {
 .menu {
 	background-color: #990000;
 	color: #ffffff;
-	perspective: 1000px;
-	perspective-origin: 50vw 50vh;
-
     font-size: 0.8em;
 }
 
@@ -230,12 +266,12 @@ header nav a:hover, header nav a:focus {
 	display: block;
 	padding: .5em 1em;
 	background-color: #990000;
-	transition: background-color .2s;
+	transition: background-color .3s;
+	outline: none;	
 }
 .menu a:hover, .menu a:focus {
 	color: #990000;
 	background-color: #eeeeee;
-	outline: none;	
 }
 
 /* ----- Video ----- */
@@ -344,9 +380,10 @@ video + .controls button:active {
 .mon-formulaire-flex textarea {
 	flex: 1 1 16rem;
 	box-sizing: border-box;
-
-	margin-bottom: 8px;
+	
+	
 }
+
 
 	
 /* ----- formulaire 2 (class="mon-formulaire-2") ----- */
@@ -358,7 +395,7 @@ video + .controls button:active {
 	margin: auto;
 	width: 390px;
 	width: calc(24rem + .5ex + 1px); /* 1px pour les erreurs d'arrondi */
-	max-width: calc(100% - 2em - 2px);
+	max-width: calc(100% - 2em - 2px - 1px);
 }
 .mon-formulaire-2 label {
 	display: inline-block;
@@ -429,6 +466,32 @@ video + .controls button:active {
 .mon-formulaire fieldset label {
 	width: 60px;
 }
+
+.mon-formulaire input,
+.mon-formulaire select,
+.mon-formulaire textarea {
+	border: 0px none;
+	border-left: 4px solid #ccc;
+
+	margin-bottom: 8px;
+	outline: none !important;
+	box-shadow: none !important;
+}
+.mon-formulaire input:valid,
+.mon-formulaire select:valid,
+.mon-formulaire textarea:valid {
+	border-left-color: #093;
+}
+.mon-formulaire input:invalid,
+.mon-formulaire select:invalid,
+.mon-formulaire textarea:invalid {
+	border-left-color: #c00;
+}
+
+.mon-formulaire:invalid [type="submit"] {
+	opacity: .5;
+}
+
 
 @keyframes envoi-form {
 	
@@ -529,16 +592,17 @@ footer address {
 
 /* ----- Présentation Adaptative ------ */
 
-@media screen and (max-width: 720px) {
-	
+@media screen and (max-width: 722px) {
+
+
 html{
-	font-size: 0.85em;
+	font-size: 1em;
 }
 	
 aside {
 	display: none;
 }
-	
+
 #colGauche {
 	position: static;
 	width: auto;
@@ -558,14 +622,12 @@ body {
 .menu a { 
 	display: inline-block;
 }	
-	
-	
-	
+
 	
 	
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 492px) {
 
 	
 .mon-tableau th, .mon-tableau td {
@@ -574,3 +636,15 @@ body {
 	
 	
 }
+
+.test {
+}
+
+h1.joliTitre {
+	color: #00c;
+	text-shadow: 0 0 8px white;
+	font-weight: bold;
+	text-decoration: overline;
+	text-decoration-style: wavy;
+}
+

@@ -2,18 +2,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Formation HTML5 &amp; CSS3</title>
 <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet'>
 <link rel="stylesheet" href="css/style.css" />
 <script src="js/script.js" defer></script>
 </head>
 <body>
-<header id="entete" class="bandeau">
+<header id="entete" class="bandeau reduit">
 	<h1>HTML5 &amp; CSS3</h1>
 	<h2>Nouveautés</h2>
 	<nav>
 		<!-- attention : display inline-block, ne pas espacer les éléments a -->
 		<a href="#">Accueil</a><a href="#">Contact</a><a href="#">Aides</a>
+		<button>&#xE010;</button>
 	</nav>
 </header>
 <div id="colGauche">
@@ -95,7 +97,7 @@
 		<h2>Population</h2>
 
         
-		<table class="mon-tableau">
+		<table hidden class="mon-tableau">
 			<thead>
 				<tr><th>Col 1</th><th>Col 2</th><th>Col 3</th></tr>
 			</thead>		
@@ -104,48 +106,57 @@
 			<tr><td>GGGGGGG</td><td>HHHHHHHHH</td><td>IIIIIIIII</td></tr>		
 		</table>
 		
-		
-		<table id="table-population" class="mon-tableau">
-			<caption>Population des plus grandes villes de France</caption>
-			<thead>
-				<tr>
-					<th></th>
-					<th>Ville</th>
-					<th>Région</th>
-					<th>1<sup>er</sup> janvier 2014</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>1</td>
-					<td>Paris</td>
-					<td>&Icirc;le de France</td>
-					<td>2&nbsp;220&nbsp;445</td>
-				</tr>
-				<tr><td>2</td><td>Marseille</td><td>Provence-Alpes-Côte d'Azur</td><td>858&nbsp;120</td></tr>
-				<tr><td>3</td><td>Lyon</td><td>Auvergne-Rhône-Alpes</td><td>506&nbsp;615</td></tr>
-				<tr><td>4</td><td>Toulouse</td><td>Occitanie</td><td>466&nbsp;297</td></tr>
-				<tr><td>5</td><td>Nice</td><td>Provence-Alpes-Côte d'Azur</td><td>347&nbsp;636</td></tr>
-				<tr><td>6</td><td>Nantes</td><td>Pays de la Loire</td><td>306&nbsp;495</td></tr>
-				<tr><td>7</td><td>Strasbourg</td><td>Grand Est</td><td>280&nbsp;680</td></tr>
-				<tr><td>8</td><td>Montpellier</td><td>Occitanie</td><td>279&nbsp;845</td></tr>
-				<tr><td>9</td><td>Bordeaux</td><td>Nouvelle Aquitaine</td><td>250&nbsp;776</td></tr>
-				<tr><td>10</td><td>Lille</td><td>Hauts-de-France</td><td>238&nbsp;381</td></tr>
-			</tbody>
-			<tfoot>
-				<tr><td colspan="4">mise à jour le 1<sup>er</sup> janvier 2017</td></tr>
-			</tfoot>
-		</table>
+		<div class="scroll-hor">
+
+			<table id="table-population" class="mon-tableau">
+				<caption>Population des plus grandes villes de France</caption>
+				<thead>
+					<tr>
+						<th></th>
+						<th>Ville</th>
+						<th>Région</th>
+						<th>Région</th>
+						<th>1<sup>er</sup> janvier 2014</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Paris</td>
+						<td>&Icirc;le de France</td>
+						<td>&Icirc;le de France</td>
+						<td>2&nbsp;220&nbsp;445</td>
+					</tr>
+					<tr><td>2</td><td>Marseille</td><td>Provence-Alpes-Côte d'Azur</td><td>Provence-Alpes-Côte d'Azur</td><td>858&nbsp;120</td></tr>
+					<tr><td>3</td><td>Lyon</td><td>Auvergne-Rhône-Alpes</td><td>Auvergne-Rhône-Alpes</td><td>506&nbsp;615</td></tr>
+					<tr><td>4</td><td>Toulouse</td><td>Occitanie</td><td>Occitanie</td><td>466&nbsp;297</td></tr>
+					<tr><td>5</td><td>Nice</td><td>Provence-Alpes-Côte d'Azur</td><td>Provence-Alpes-Côte d'Azur</td><td>347&nbsp;636</td></tr>
+					<tr><td>6</td><td>Nantes</td><td>Pays de la Loire</td><td>Pays de la Loire</td><td>306&nbsp;495</td></tr>
+					<tr><td>7</td><td>Strasbourg</td><td>Grand Est</td><td>Grand Est</td><td>280&nbsp;680</td></tr>
+					<tr><td>8</td><td>Montpellier</td><td>Occitanie</td><td>Occitanie</td><td>279&nbsp;845</td></tr>
+					<tr><td>9</td><td>Bordeaux</td><td>Nouvelle Aquitaine</td><td>Nouvelle Aquitaine</td><td>250&nbsp;776</td></tr>
+					<tr><td>10</td><td>Lille</td><td>Hauts-de-France</td><td>Hauts-de-France</td><td>238&nbsp;381</td></tr>
+				</tbody>
+				<tfoot>
+					<tr><td colspan="4">mise à jour le 1<sup>er</sup> janvier 2017</td></tr>
+				</tfoot>
+			</table>
+		</div>
 	</article>
 	<article id="inscription">
 		<h2>Inscription</h2>
 		
-		<form method="post" action="inscription.php" 
-			class="mon-formulaire-2" enctype="multipart/form-data"
+		<form method="post" action="#rien"
+			id="form-inscription" 
+			class="mon-formulaire" enctype="multipart/form-data"
 			>
 		
-			<label for="nom">Nom *</label>
-			<input type="text" id="nom" name="nom" placeholder="votre nom" required/>
+			<label for="nom">Nom * <span id="err-nom" hidden>min. 3 car.</span> </label>
+			<input type="text" id="nom" name="nom" 
+				placeholder="votre nom" required
+				value="leblanc" 
+				autofocus
+				/>
 			<br/>
 			<label for="prenom">Prénom</label>
 			<input type="text" id="prenom" name="prenom" placeholder="votre prénom" />
@@ -211,8 +222,9 @@
 			<button type="submit" >Envoyer</button>
 			<button type="reset" >Effacer</button>
 		</form>
-		<form method="post" action="inscription.php" 
-		class="mon-formulaire-flex" enctype="multipart/form-data"
+		<!-- formulaire avec flexbox -->
+		<form hidden method="post" action="inscription.php" 
+		class="--mon-formulaire-flex--" enctype="multipart/form-data"
 		>
 	
 		<label for="nom">Nom *</label>
