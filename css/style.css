@@ -274,6 +274,24 @@ header.reduit > :not(nav) {
 	background-color: #eeeeee;
 }
 
+.menu h3 {
+	line-height: 28px;
+	font-size: 1em;
+	padding: 0;
+	margin: 0;
+}
+.menu .icone-menu {
+	display: inline-block;
+	width: 28px;
+	height: 28px;
+	margin-right: 12px;
+	background-image: url(../img/css-sprite.png);
+	background-position: right -36px bottom -4px ;
+	--outline: 1px solid white;
+	vertical-align: -.5em;
+}
+
+
 /* ----- Video ----- */
 video + .controls {
 
