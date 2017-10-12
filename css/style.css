@@ -187,20 +187,22 @@ header nav a:hover, header nav a:focus {
 }
 
 header nav button {
-	font-family: "Segoe MDL2 Assets", fantasy;
 	margin: 0;
 	padding: 0;
 	border: 0 none transparent;
 	background: none;
-	display: inline-block;
-	background-color: #fff9;
-	line-height: 20px;
-	width: 24px;
-	text-align: center;
+	display: inline;
+	cursor: pointer;
+	
+	line-height: 1em;
+	vertical-align: top;
+
+	padding: 1px;
+
+	color: #990000;
+	background-color: #ffffff;
+	background-color: #ffffffaa;
 	border-radius: 50%;
-	border: 2px solid white;
-	box-sizing: border-box;
-	font-weight: 900;
 
 }
 header nav button {
