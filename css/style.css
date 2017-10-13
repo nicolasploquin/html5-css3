@@ -620,6 +620,18 @@ article#aAnimation {
 }
 
 
+svg circle {
+	fill: yellow;
+	stroke-width: 1px;
+	stroke-dasharray: 10px 5px 1px 5px;
+	stroke: navy;
+}
+
+svg circle:hover {
+	stroke-dasharray: 7px 0px;
+}
+
+
 /* ----- pied (address) ----- */
 
 footer address {
@@ -685,33 +697,3 @@ h1.joliTitre {
 	text-decoration-style: wavy;
 }
 
-video {
-	height: 0;
-	width: 0;
-}
-video * {
-	display: block;
-	visibility: visible;
-	opacity: 1;
-	overflow: visible;
-}
-media h2::after, video::after {
-	position: absolute;
-	content: attr(src);
-	display: block;
-	width: 400px;
-	height: 50px;
-	background-color: yellow;
-	color: navy;
-}
-
-svg circle {
-	fill: yellow;
-	stroke-width: 1px;
-	stroke-dasharray: 10px 5px 1px 5px;
-	stroke: navy;
-}
-
-svg circle:hover {
-	stroke-dasharray: 7px 0px;
-}
