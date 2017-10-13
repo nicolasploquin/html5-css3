@@ -45,10 +45,6 @@ a[href^="http"]::after {
     content: " (" attr(href) ")";
 }
 
-video source:first-child::after {
-    display: block;
-    content: attr(src);
-}
 
 img {
     max-width: 100%;
