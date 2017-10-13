@@ -122,6 +122,8 @@ main {
 	background-color: white;
 }
 
+
+
 /* ----- entete  ----- */
 header {
 	background-color: #cccccc;
@@ -238,7 +240,24 @@ header.reduit > :not(nav) {
 	padding: 1em;
 	border-radius: 1em;
 }
-.fable.animation {
+.fable:not(.animation)::first-letter {
+    font-size: 4.84em;
+    line-height: 1em;
+    margin-right: .05em;
+    float: left;
+}
+.fable:not(.animation)::first-line {
+    font-weight: bold;
+}
+.fable::-moz-selection, .fable ::-moz-selection {
+	color: black;
+	background-color: #FFFF66;
+ }
+ .fable::selection, .fable ::selection {
+	color: black;
+	background-color: #FFFF66;
+ }
+ .fable.animation {
 	height: 1em;
 	width: 5.5em;
 	overflow: hidden;
@@ -650,15 +669,13 @@ body {
 @media screen and (max-width: 492px) {
 
 	
-.mon-tableau th, .mon-tableau td {
-	padding: 0em .25em;
-}
+	.mon-tableau th, .mon-tableau td {
+		padding: 2px .25em;
+	}
 	
 	
 }
 
-.test {
-}
 
 h1.joliTitre {
 	color: #00c;
@@ -668,3 +685,33 @@ h1.joliTitre {
 	text-decoration-style: wavy;
 }
 
+video {
+	height: 0;
+	width: 0;
+}
+video * {
+	display: block;
+	visibility: visible;
+	opacity: 1;
+	overflow: visible;
+}
+media h2::after, video::after {
+	position: absolute;
+	content: attr(src);
+	display: block;
+	width: 400px;
+	height: 50px;
+	background-color: yellow;
+	color: navy;
+}
+
+svg circle {
+	fill: yellow;
+	stroke-width: 1px;
+	stroke-dasharray: 10px 5px 1px 5px;
+	stroke: navy;
+}
+
+svg circle:hover {
+	stroke-dasharray: 7px 0px;
+}

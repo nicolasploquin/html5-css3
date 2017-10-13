@@ -127,14 +127,13 @@
             var input = event.target;
             input.value = input.value.toUpperCase();
         }
+                
+        /* --- svg --- */
+        document.querySelector('svg circle').addEventListener("click",function(event){
+            event.target.setAttribute("r", parseInt(event.target.getAttribute("r")) + 5);
 
-        var listeTitre = document.querySelectorAll('h2');
-        for(var i = 0 ; i < listeTitre.length ; i++){
-            listeTitre[i].addEventListener("",maFonction);
-        }
+        });
         
-
-
 
     })();
     

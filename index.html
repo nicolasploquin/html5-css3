@@ -4,9 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Formation HTML5 &amp; CSS3</title>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet'>
-<link rel="stylesheet" href="css/style.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" media="screen">
+<link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel="stylesheet" media="all">
+<link rel="stylesheet" href="css/style.css" media="screen" />
+<link rel="stylesheet" href="css/print.css" media="print" />
 <script src="js/script.js" defer></script>
 </head>
 <body>
@@ -58,7 +59,7 @@
 	<article id="illustration">
 		<h2>Illustration</h2>
 		<figure>
-			<img src="img/cigale-fourmi.jpg" width="600" alt="Illustration de la fable La Cigale et la Fourmi" />
+			<img src="img/cigale-fourmi.jpg" width="3000" alt="Illustration de la fable La Cigale et la Fourmi" />
 			<figcaption>Illustration de la fable La Cigale et la Fourmi</figcaption>
 		</figure>
 	</article>
@@ -75,10 +76,12 @@
 	</article>
 	<article id="media">
 		<h2>Vidéo</h2>
-		<video poster="http://eni-html5.appspot.com/media/golf.png" width="720" >
-			<source src="http://eni-html5.appspot.com/media/golf.mp4" />
+		<video src="http://eni-html5.appspot.com/media/golf.mp4"
+			poster="http://eni-html5.appspot.com/media/golf.png" 
+			width="720" >
+			<!-- source src="http://eni-html5.appspot.com/media/golf.mp4" />
 			<source src="http://eni-html5.appspot.com/media/golf.webm" />
-			<source src="http://eni-html5.appspot.com/media/golf.ogv" />
+			<source src="http://eni-html5.appspot.com/media/golf.ogv" / -->
 			<track default src="media/golf.vtt" srclang="fr"/>
 		</video>
 		<div class="controls">
@@ -300,6 +303,10 @@
 
 		<button id="animPlay">Play</button>
 		<button id="animPause">Pause</button>
+
+		<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+			<circle cx="100" cy="100" r="50" onclick="console.dir(this)" />
+		</svg>
 	</article>
 </main>
 <footer id="pied">
