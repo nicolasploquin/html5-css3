@@ -277,7 +277,6 @@ header.reduit > :not(nav) {
 
 /* ----- figure ----- */
 figcaption {
-	text-align: center;
 	font-style: italic;
 }
 figcaption::before {

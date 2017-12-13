@@ -64,7 +64,7 @@
         var monFormulaire = document.querySelector(".mon-formulaire.animation");
         if(monFormulaire){
             monFormulaire.addEventListener("submit", function(event) {
-                event.preventDefault(); // annule l'envoi par le navigateur et donc le rechargement de la page
+                //event.preventDefault(); // annule l'envoi par le navigateur et donc le rechargement de la page
                 event.target.classList.add("envoi");
             },false);
         }
