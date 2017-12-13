@@ -9,6 +9,8 @@ html {
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
+
+	counter-reset: figure;
 }
 main { display: block; } /* bug IE 11 */
 h1 {
@@ -46,7 +48,6 @@ a[href$=".docx"]{
 	background-repeat: no-repeat;
 	padding-left: 1.75em;
 }
-
 
 table, th, td {
 /*	border: 1px solid #444444; */
@@ -273,6 +274,17 @@ header.reduit > :not(nav) {
 	text-align: justify;
 	overflow: hidden;
 }
+
+/* ----- figure ----- */
+figcaption {
+	text-align: center;
+	font-style: italic;
+}
+figcaption::before {
+	counter-increment: figure;
+	content: "Figure " counter(figure) " - ";
+}
+
 
 
 /* ----- menu (class="menu") ----- */
