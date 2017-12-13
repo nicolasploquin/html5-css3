@@ -61,12 +61,14 @@
         }
 
         // ---- Animation Envoi
-        var monFormulaire = document.querySelector(".mon-formulaire");
-        monFormulaire.addEventListener("submit", function(event) {
-            event.preventDefault(); // annule l'envoi par le navigateur et donc le rechargement de la page
-            event.target.classList.add("envoi");
-        },false);
-
+        var monFormulaire = document.querySelector(".mon-formulaire.animation");
+        if(monFormulaire){
+            monFormulaire.addEventListener("submit", function(event) {
+                event.preventDefault(); // annule l'envoi par le navigateur et donc le rechargement de la page
+                event.target.classList.add("envoi");
+            },false);
+        }
+            
         
         
         // ----- Vidéo player
