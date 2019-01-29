@@ -9,9 +9,7 @@
       margin: auto;
       max-width: 1000px;
       
-
     }
-
     article {
       padding: 10px;
       border: 2px solid red;
@@ -19,41 +17,41 @@
       box-sizing: border-box;
       max-width: 800px;
       margin: auto;
-            ax-height: 50vw;
+
+      display: grid;
       
-      display: flex;
+      grid-template-columns: 200px 20% 1fr 2fr ;
+      grid-template-rows: 20vh 50vh auto;
 
-      flex-flow: row nowrap;
-
-      justify-content: space-between;
-      align-items: stretch;
-     
     }
-
     div {
       margin: 0px;
       padding: 5px;
       border: 2px solid black;
       background-color: rgba(255, 255, 0, 0.5);
-
-       idth: 150px;
-       eight: 150px;
-
-      flex: 1 1 150px;
+      
+    
       
     }
     div:nth-child(odd){
-      font-size: 3em;
+    	font-size: 3em;
 		  background-color: rgba(255, 0, 0, 0.25);
-      
-      flex: 1 0 150px;
-    }
-    
 
-    #deux {
-    	
     }
-    
+    #un {
+      grid-column: 1 / 3;
+    }
+    #deux {
+      grid-column: 3 / 4;
+      grid-row: 1 / -1;
+    }
+    #quatre {
+      grid-column: 1 / 3;
+      grid-row: 2;
+    }
+    #cinq {
+      grid-row: 2 / 4;
+    }
     
     
     
@@ -66,9 +64,9 @@
     <div id="deux">Deux</div>
     <div id="trois">Trois</div>
     <div id="quatre">Quatre</div>
-    <!-- <div id="cinq">Cinq</div>
+    <div id="cinq">Cinq</div>
     <div id="six">Six</div>
-    <div id="sept">Sept</div> -->
+    <div id="sept">Sept</div>
   </article>
 </body>
 </html>

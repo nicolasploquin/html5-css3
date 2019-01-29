@@ -19,14 +19,8 @@
       box-sizing: border-box;
       max-width: 800px;
       margin: auto;
-            ax-height: 50vw;
       
-      display: flex;
-
-      flex-flow: row nowrap;
-
-      justify-content: space-between;
-      align-items: stretch;
+      
      
     }
 
@@ -36,39 +30,35 @@
       border: 2px solid black;
       background-color: rgba(255, 255, 0, 0.5);
 
-       idth: 150px;
-       eight: 150px;
-
-      flex: 1 1 150px;
+       dth: 150px;
+      height: 500px;
       
+      isplay: none;
+       eight: 10px;
+       verflow: hidden;  
+    } 
+    div:target {
+       isplay: block;
+      height: 500px;
     }
     div:nth-child(odd){
       font-size: 3em;
 		  background-color: rgba(255, 0, 0, 0.25);
-      
-      flex: 1 0 150px;
-    }
-    
-
-    #deux {
-    	
-    }
-    
-    
-    
-    
-    
+    }   
   </style>
 </head>
 <body>
+  <nav>
+    <a href="#un">Un</a>
+    <a href="#deux">Deux</a>
+    <a href="#trois">Trois</a>
+    <a href="#quatre">Quatre</a>
+  </nav>
   <article>
     <div id="un">Un</div>
     <div id="deux">Deux</div>
     <div id="trois">Trois</div>
     <div id="quatre">Quatre</div>
-    <!-- <div id="cinq">Cinq</div>
-    <div id="six">Six</div>
-    <div id="sept">Sept</div> -->
   </article>
 </body>
 </html>
