@@ -20,13 +20,20 @@
       max-width: 800px;
       margin: auto;
             ax-height: 50vw;
-      
+            
       display: flex;
+      
+      flex-flow: row wrap ;
+
+      justify-content: space-between;
+      align-items: stretch;
+
+      /* display: flex;
 
       flex-flow: row nowrap;
 
       justify-content: space-between;
-      align-items: stretch;
+      align-items: stretch; */
      
     }
 
@@ -39,7 +46,10 @@
        idth: 150px;
        eight: 150px;
 
-      flex: 1 1 150px;
+       display: inline-block;
+
+
+      flex: 0 1 150px; /* grow, shrink, basis  */
       
     }
     div:nth-child(odd){
@@ -66,9 +76,9 @@
     <div id="deux">Deux</div>
     <div id="trois">Trois</div>
     <div id="quatre">Quatre</div>
-    <!-- <div id="cinq">Cinq</div>
+    <div id="cinq">Cinq</div>
     <div id="six">Six</div>
-    <div id="sept">Sept</div> -->
+    <div id="sept">Sept</div>
   </article>
 </body>
 </html>

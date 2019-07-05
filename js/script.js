@@ -72,37 +72,55 @@
         
         
         // ----- Vidéo player
-        var video = document.querySelector("video");
-        var play = document.querySelector("#play");
-        var pause = document.querySelector("#pause");
-        var stop = document.querySelector("#stop");
-        var x1 = document.querySelector("#x1");
-        var x2 = document.querySelector("#x2");
-        var temps = document.querySelector("#temps");
+        let video = document.querySelector(".video-player video");
+        video.volume = 0.05;
+        video.muted = true;
         
-        play.addEventListener("click",function(){
-            video.play();
-        },false);
-        pause.addEventListener("click",function(){
-            video.pause();
-        },false);
-        stop.addEventListener("click",function(){
-            video.pause();
-            video.currentTime = 0;
-        },false);
-        x1.addEventListener("click",function(){
-            video.playbackRate = 1;
-        },false);
-        x2.addEventListener("click",function(){
+        let btnPlay = document.querySelector("#btn-play");
+        let btnPlaySpeed = document.querySelector("#btn-play-speed");
+        let btnPause = document.querySelector("#btn-pause");
+        let btnStop = document.querySelector("#btn-stop");
+        let btnRepeat = document.querySelector("#btn-repeat");
+        let btnReplay = document.querySelector("#btn-replay");
+        let btnMute = document.querySelector("#btn-mute");
+        
+        btnPlay.addEventListener("click", (event) => {  
+            video.play(); // pause()
+        });
+        btnPlaySpeed.addEventListener("click", (event) => { 
             video.playbackRate = 2;
-        },false);
-        video.addEventListener("timeupdate",function(){
-            temps.textContent = new Date((video.currentTime-3600)*1000).toLocaleTimeString();
-        },false);
-
+            video.play(); // pause()
+        });
+        btnPause.addEventListener("click", (event) => { 
+            video.pause(); 
+        }); 
+        btnStop.addEventListener("click", (event) => { 
+            video.pause();
+            video.currentTime = 0; 
+        }); 
+        
+        // btnRepeat.style.backgroundColor = "#999";
+        btnRepeat.classList.add("inactive");
+        btnRepeat.addEventListener("click", (event) => { 
+            video.loop = !video.loop;
+            btnRepeat.classList.toggle("inactive");
+        }); 
+        
+        btnReplay.addEventListener("click", (event) => { 
+            video.currentTime = video.currentTime - 10; 
+        }); 
+        
+        btnMute.classList.add("inactive");
+        btnMute.addEventListener("click", (event) => { 
+            let icon = btnMute.querySelector("i");
+            video.muted = !video.muted;
+            btnMute.classList.toggle("inactive");
+            icon.textContent = video.muted ? "volume_off" : "volume_up";
+        }); 
+        
         // ----- Entête réduite
         var entete = document.querySelector("header");
-        var btnReduire = document.querySelector("header nav button");
+        var btnReduire = document.querySelector("header button");
         
         btnReduire.addEventListener("click",function(){
             entete.classList.toggle("reduit");
