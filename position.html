@@ -5,12 +5,16 @@
   <style type="text/css">
     body {
       text-align: center;
-      margin: auto;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: calc((100vh - 517px) / 2);
       max-width: 1000px;
+
+      height: 513px;
 
       border: 2px solid blue;
 
-
+      
     }
     
     article {
@@ -23,7 +27,7 @@
       border: 2px solid red;
       
       position: relative;
-
+      
     }
 
     div {
@@ -35,6 +39,7 @@
       background-color: rgba(255, 255, 0, 0.5);
       
       display: block;
+     
 
 
     }
@@ -44,9 +49,11 @@
     }
 
     #deux {
+      
       position: absolute;
-      top: 0;
-      right: 0;
+      bottom: 0px;
+      right: 0px;
+     
 
     }
     
@@ -59,9 +66,7 @@
 <body>
   <article>
     <!-- attention display : inline, ne pas ajouter d'espaces entre les div -->
-    <div id="un">Un</div>
-    <div id="deux">Deux</div>
-    <div id="trois">Trois</div>
+    <div id="un">Un</div><div id="deux">Deux</div><div id="trois">Trois</div>
     <div id="quatre">Quatre</div>
   </article>
 </body>

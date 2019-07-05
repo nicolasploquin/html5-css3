@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<svg xmlns="http://www.w3.org/2000/svg"
+    enable-background="new 0 0 320 320"
+    width="320" height="320" viewbox="0 0 320 320" fill="currentColor">
+    <g transform="translate(60,60),scale(0.8)">
+        <polygon points="0 0 150 100 0 200" /> 
+        <polygon points="0 0 150 100 0 200" transform="translate(50,0)"/>
+    </g>
+    <text x="160" y="260" font-size="100" text-anchor="end">1.5</text>
+</svg>
